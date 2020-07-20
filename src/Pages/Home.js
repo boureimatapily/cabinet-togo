@@ -1,9 +1,7 @@
 import React from "react";
 import { Container, Grid} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import "../Components/Home/Home.css";
-import ButtonAppBar from "../Components/Home/testCard";
-//import Style3 from "../Components/StyleComponents/style3/Style3";
+
 
 
 
@@ -27,17 +25,10 @@ export default function Home() {
       <Grid container style={{ marginTop: 50 }} className={classes.root}>
         <Grid item xs={12} md={12} lg={12}>
           <div className="hcontainer">
-            <h4>  All about awesome css style</h4>
+            <h4>  All about coding </h4>
           </div>
         </Grid>
-        {/* <Grid item xs={12} md={12} lg={12}>
-          <Style3 />
-       
-        </Grid> */}
-        
-        <Grid item xs={12} md={12} lg={12} className={classes.note}>
-          <ButtonAppBar/>
-        </Grid>
+
 
        
       </Grid>
