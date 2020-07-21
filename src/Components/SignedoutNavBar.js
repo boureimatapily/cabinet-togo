@@ -34,6 +34,15 @@ import ListItemText from '@material-ui/core/ListItemText';
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
+
+  },
+  appBar:{
+    backgroundColor:"#2bd69a"
+  },
+  navButton:{
+    color:"#ffff",
+    marginRight:10,
+    fontWeight:"bold"
   },
   list: {
     width: 250,
@@ -103,14 +112,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  appBar:{
-    backgroundColor:"white"
-  },
-  navButton:{
-    color:"black",
-    marginRight:10,
-    fontWeight:"bold"
-  },
+ 
 
 }));
 
@@ -239,9 +241,7 @@ function SignedoutNavBar(){
       <Grid container className={classes.grow} spacing={2}>
         <Grid item lg={12} md={12} sm={12} xl={12} >
 
-        
-      <div className={classes.grow}>
-
+      <div>
 
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
@@ -269,7 +269,7 @@ function SignedoutNavBar(){
 
           
           <Typography className={classes.title} variant="h6" noWrap>
-            Cabinet Togo
+             Covid Care
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
