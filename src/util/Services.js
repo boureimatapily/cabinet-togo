@@ -7,13 +7,20 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { Card } from "@material-ui/core";
+import { Card, Paper } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  },
+    },
+    cardPaper:{
+        margin:10
+    },
+    content:{
+        textAlign:"center"
+    }
+  
 }));
 
 export default function Services({image, description, buttonText}) {
@@ -21,31 +28,34 @@ export default function Services({image, description, buttonText}) {
    
   return (
     <div className={classes.root}>
+         <Paper className={classes.cardPaper}>
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
             component="img"
             alt="Contemplative Reptile"
             image={image}
-            height="140"
+          
             title="Contemplative Reptile"
+            className={classes.imgCard}
           >
             
          </CardMedia> 
-          <CardContent>
+          <CardContent className={classes.content}>
            
             <Typography variant="body2" color="textSecondary" component="p">
                 {description}
             </Typography>
           </CardContent>
         </CardActionArea>
-        <CardActions>
+        <CardActions style={{marginLeft:"30%"}}>
           <Button style={{backgroundColor:"#2bd69a", color:"white", fontWeight:"bold"}}>
             {buttonText}
           </Button>
           
         </CardActions>
       </Card>
+      </Paper>
     </div>
   );
 }
