@@ -43,7 +43,8 @@ export default function Services({image, description, buttonText}) {
          </CardMedia> 
           <CardContent className={classes.content}>
            
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" color="textSecondary" component="p" 
+            style={{ color:"black", fontWeight:"bold"}}>
                 {description}
             </Typography>
           </CardContent>
