@@ -15,8 +15,12 @@ const styles = {
    firstContainer:{
      display:"flex",
      flexDirection:"row",
-     justifyContent:"space-evenly"
+     justifyContent:"space-evenly",
+    marginTop:10,
    },
+   firstContainerFirstDiv:{
+     
+   }
 };
 
 
@@ -31,7 +35,7 @@ class Home extends React.Component {
         <Grid item xs={12} md={12} lg={12}>
                       {/* first Container  */}
         <Paper elevation={1} className={classes.firstContainer}>  
-          <div  >
+          <div className={classes.firstContainerFirstDiv} >
             <h2>  Fight COVID-19 With Codetrain and Covid Care Platform </h2>
             <h4>  Voluptate fugiat reprehenderit sint aliquip  </h4>
             <Button style={{color:"white", backgroundColor:"#2bd69a"}} > Get Start</Button>

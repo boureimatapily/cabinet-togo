@@ -68,7 +68,7 @@ class Login extends React.Component {
       <Grid item xs={12} md={6} lg={6} > 
     <div className={classes.root}>
       <Paper className={classes.loginSection}>
-        <h2>Log In to Learn forward</h2>
+        <h2>Log In to Covid Care</h2>
         <form autoComplete={"false"} className={classes.formSection} onSubmit={this.handleSubmit} >
           <TextField
             id="standard-basic"
