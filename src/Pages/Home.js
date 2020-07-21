@@ -3,7 +3,7 @@ import { Container, Grid, Paper, Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import covid from "../Images/covid.jpg"
 import PropTypes from 'prop-types';
-
+import ServicesSection from "../Components/Home/ServicesSection";
 
 // Making styles
 const styles = theme =>({
@@ -84,7 +84,9 @@ class Home extends React.Component {
                   <h1> Covid Care & Codetrain </h1>
                   <h5 style={{marginTop:0}}> Covid care is helping Hospitals and health professionals  to the COVID 19
                      crisis with a modern Technology, collaborate work and sharing informations </h5>
-                
+              </div>
+              <div>
+                <ServicesSection />
               </div>
             </Paper>
           </Grid>
