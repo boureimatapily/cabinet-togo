@@ -14,9 +14,11 @@ import { connect } from "react-redux";
 const styles = {
  
   loginSection: {
-    paddingLeft: 20,
-    paddingRight:20,
+    paddingLeft: 50,
+    paddingRight:50,
     marginTop: 50,
+
+
   },
 
   otheraccounts:{
@@ -60,6 +62,7 @@ class Login extends React.Component {
     const { classes } = this.props;
   return (
     <Container fixed >
+
       <Grid container> 
       <Grid item xs md lg > </Grid>
       <Grid item xs={12} md={6} lg={6} > 

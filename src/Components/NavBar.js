@@ -32,3 +32,23 @@ import SignedoutNavBar from './SignedoutNavBar';
 
 
 export default NavBar 
+
+
+
+
+
+
+// <Link to="/">
+// {" "}
+// <Button variant="contained" color="primary" className={classes.navButton}>Cabinet Comptable Togo</Button>{" "}
+// </Link>
+            
+// <Link to="/login">
+// {" "}
+// <Button variant="contained" color="primary" className={classes.navButton}>Login</Button>{" "}
+// </Link>
+
+// <Link to="/signup">
+// {" "}
+// <Button variant="contained" color="primary" className={classes.navButton}>Sign up</Button>
+// </Link>

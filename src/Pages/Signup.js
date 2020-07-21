@@ -30,9 +30,9 @@ const styles ={
   root:{
     display:"flex",
   },
-  loginSection: {
-    paddingRight:20,
-    paddingLeft: 20,
+  SignupSection: {
+    paddingRight:30,
+    paddingLeft: 30,
     marginTop: 20,
   },
  
@@ -82,7 +82,7 @@ class Signup extends React.Component {
       <Grid item xs md lg > </Grid>
       <Grid item xs={12} md={4} lg={4} > 
     <div>
-      <Paper className={classes.loginSection}>
+      <Paper className={classes.SignupSection}>
         <h2>Get Started for Free</h2>
         <form autoComplete={"false"} className={classes.formSection}onSubmit={this.handleSubmit}>
             <TextField

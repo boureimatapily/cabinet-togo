@@ -1,40 +1,50 @@
-import React  from 'react';
+import React from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-
-import Button from "@material-ui/core/Button";
+import MoreIcon from '@material-ui/icons/MoreVert';
+import PropTypes from 'prop-types';
 
 //import { Link } from '@material-ui/core';
-import { Link } from "react-router-dom";
 import { Grid, Container } from '@material-ui/core';
 import {logout} from "../redux/Actions/authActions"
 import { connect } from 'react-redux';
-// import   firebase  from '../Config/fbconfig';
-// import auth from "../Config/fbconfig"
-// import {toast} from "react-toastify"
+import Hidden from '@material-ui/core/Hidden';
+
+import clsx from 'clsx';
+import {Link }from 'react-router-dom';
+
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+
+
+
 
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
-    
-     
   },
-  appbar:{
-    backgroundColor:"#810aff",
-    color:"white",
-    fontWeight:"bolder"
+  list: {
+    width: 250,
   },
+  fullList: {
+    width: 'auto',
+  },
+  navButtonContainer:{
+    marginTop:10,
+  },
+  
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -93,29 +103,71 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
-  navButton:{
-    backgroundColor:"gray",
-    marginRight:5
+  appBar:{
+    backgroundColor:"white"
   },
+  navButton:{
+    color:"black",
+    marginRight:10,
+    fontWeight:"bold"
+  },
+
 }));
 
- function SignedoutNavBar({logout, history}) {
+
+function SignedoutNavBar(){
   const classes = useStyles();
+  // Drawler
+  const [state, setState] = React.useState({
 
-  // const [isAuthenticated, setIsAuthenticated] = useState(null)
+    left: false,
+   
+  });
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
 
-  // useLayoutEffect(() => {
-  //   setIsAuthenticated(getAuthenticationStatus())
-  // })
+    setState({ ...state, [anchor]: open });
+  };
+  const list = (anchor) => (
+   
+        <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <ListItem button>  
+            <Link to="/">
+              <ListItemText primary="Home" />
+            </Link>
+        </ListItem>
 
-  // const handleLogout = event => {
-  //   event.preventDefault()
-  //   logout()
-  //   toast.success("Logout successful")
-  
-  // }
+        <ListItem button>  
+            <Link to="/login">
+              <ListItemText primary="Login" />
+            </Link>
+        </ListItem>
 
-  // const [spacing, setSpacing] = React.useState(2);
+        <ListItem button>  
+            <Link to="/signup">
+              <ListItemText primary="Sign up" />
+            </Link>
+        </ListItem>
+      </List>
+     
+    </div>
+   
+    
+  );
+
+  //Drawler
+
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -166,23 +218,7 @@ const useStyles = makeStyles((theme) => ({
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-         <Link to="/">
-            {" "}
-            <Button variant="contained" color="primary" className={classes.navButton}>Home</Button>{" "}
-          </Link>
-         
-          <Link to="/login">
-            {" "}
-            <Button variant="contained" color="primary" className={classes.navButton}>Login</Button>{" "}
-          </Link>
-          <Link to="/signup">
-            {" "}
-            <Button variant="contained" color="primary" className={classes.navButton}>Sign up</Button>
-          </Link>
-          
-           
-         
-          
+    
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
@@ -196,15 +232,44 @@ const useStyles = makeStyles((theme) => ({
       </MenuItem>
     </Menu>
   );
+  
 
   return (
     <Container fixed>
       <Grid container className={classes.grow} spacing={2}>
-      <AppBar position="static" className={classes.appbar}>
-        <Toolbar>
+        <Grid item lg={12} md={12} sm={12} xl={12} >
+
         
+      <div className={classes.grow}>
+
+
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+        <Hidden smUp> 
+        {['left'].map((anchor) => (
+        <React.Fragment key={anchor}>
+           <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+            onClick={toggleDrawer(anchor, true)}
+          >
+             <MenuIcon />
+          </IconButton>
+          <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+            {list(anchor)}
+          </Drawer>
+
+         
+        </React.Fragment>
+      ))}
+       </Hidden>    
+     
+
+          
           <Typography className={classes.title} variant="h6" noWrap>
-            CSS STYLE APP
+            Cabinet Togo
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -221,46 +286,61 @@ const useStyles = makeStyles((theme) => ({
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-
-          <Link to="/">
-            {" "}
-            <Button variant="contained" color="primary" className={classes.navButton}>All CSS</Button>{" "}
-          </Link>
-                        
-          <Link to="/login">
-          {" "}
-          <Button variant="contained" color="primary" className={classes.navButton}>Login</Button>{" "}
-          </Link>
-
-          <Link to="/signup">
-          {" "}
-          <Button variant="contained" color="primary" className={classes.navButton}>Sign up</Button>
-          </Link>
-         
-
-         
            
+          <Typography className={classes.navButtonContainer} >
+            <Link to="/"  className={classes.navButton}>
+              Home
+            </Link>
+          </Typography>
+          <Typography  className={classes.navButtonContainer} >
+            <Link to="/login"  className={classes.navButton}>
+              Login
+            </Link>
+          </Typography>
+        <Typography   className={classes.navButtonContainer}>
+            <Link to="/signup"  className={classes.navButton}>
+              Sign up
+            </Link>
+          </Typography>
+
+
+
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
           </div>
           <div className={classes.sectionMobile}>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleMobileMenuOpen}
-          >
-            <MenuIcon />
-          </IconButton>
+            <IconButton
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
           </div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+    </div>
+      </Grid>
       </Grid>
       </Container>
   );
 }
 
+SignedoutNavBar.propTypes = {
+  width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
+};
 // const mapStateToProps = ({currentUser}) => {
 //   return { currentUser }
 // }
