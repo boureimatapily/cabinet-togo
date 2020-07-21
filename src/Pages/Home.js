@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid, Paper, Button} from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 
-// styles
+// Making styles
 const styles = {
   root: {
     display:"flex",
@@ -29,6 +29,7 @@ class Home extends React.Component {
     <Container fixed>
       <Grid container style={{ marginTop: 10}} className={classes.root}>
         <Grid item xs={12} md={12} lg={12}>
+                      {/* first Container  */}
         <Paper elevation={1} className={classes.firstContainer}>  
           <div  >
             <h2>  Fight COVID-19 With Codetrain and Covid Care Platform </h2>
