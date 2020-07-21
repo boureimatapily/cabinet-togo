@@ -36,7 +36,15 @@ const styles = theme =>({
   covidImage:{
     width:"300",
     height:300,
-    
+  },
+  secondContainer: {
+    display:"flex",
+    flexDirection:"column",
+    justifyContent:"center",
+    alignItems:"center",
+  },
+  secondContainerFirstDiv:{
+    width:'40%'
   }
 });
 
@@ -46,10 +54,11 @@ class Home extends React.Component {
 
     return (
       <Container fixed>
+                {/* first Container */}
         <Grid container style={{ marginTop: 10 }} className={classes.root}>
           <Grid item xs={12} md={12} lg={12}>
-            {/* first Container  */}
-            <Paper elevation={1} className={classes.firstContainer}>
+           
+            <Paper elevation={0} className={classes.firstContainer}>
               <div className={classes.firstContainerFirstDiv}>
                 <h2> Fight COVID-19 With Codetrain and Covid Care Platform </h2>
                 <h4> Voluptate fugiat reprehenderit sint aliquip </h4>
@@ -62,6 +71,20 @@ class Home extends React.Component {
 
               <div>
                 <img src={covid} alt="covid-care" className={classes.covidImage} />
+              </div>
+            </Paper>
+          </Grid>
+        </Grid>
+                           {/* second Container  */}
+        <Grid container style={{ marginTop: 5 }}>
+          <Grid item xs={12} md={12} lg={12}>
+            
+            <Paper elevation={0} className={classes.secondContainer}>
+              <div className={classes.secondContainerFirstDiv}>
+                  <h1> Covid Care & Codetrain </h1>
+                  <h5 style={{marginTop:0}}> Covid care is helping Hospitals and health professionals  to the COVID 19
+                     crisis with a modern Technology, collaborate work and sharing informations </h5>
+                
               </div>
             </Paper>
           </Grid>
