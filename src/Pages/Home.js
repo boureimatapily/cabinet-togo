@@ -1,9 +1,12 @@
 import React from "react";
 import { Container, Grid, Paper, Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
+import covid from "../Images/covid.jpg"
+import PropTypes from 'prop-types';
+
 
 // Making styles
-const styles = {
+const styles = theme =>({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -17,16 +20,25 @@ const styles = {
     flexDirection: "row",
     justifyContent: "space-evenly",
     marginTop: 10,
+    alignItems:"center",
+   
   },
   firstContainerFirstDiv: {
-    width: 400,
+    width: '40%',
+
   },
   getStartButton:{
     color: "white", 
     backgroundColor: "#2bd69a", 
-    width:200
+    width:200,
+    fontWeight:"bolder"
   },
-};
+  covidImage:{
+    width:"300",
+    height:300,
+    
+  }
+});
 
 class Home extends React.Component {
   render() {
@@ -49,7 +61,7 @@ class Home extends React.Component {
               </div>
 
               <div>
-                <h4> All about coding </h4>
+                <img src={covid} alt="covid-care" className={classes.covidImage} />
               </div>
             </Paper>
           </Grid>
@@ -58,5 +70,7 @@ class Home extends React.Component {
     );
   }
 }
-
+Home.propTypes = {
+  width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
+};
 export default withStyles(styles)(Home);
