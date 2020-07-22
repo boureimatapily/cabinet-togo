@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./Pages/Home";
-import Signup from "./Pages/Signup";
-import Login from "./Pages/Login";
+import Health from "./Pages/Health";
+import Hospital from "./Pages/Hospital";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 
@@ -41,8 +41,8 @@ function App(){
            
           />
          {/* <Route exact path="/chat" component={Chat} /> */}
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/hospital" component={Hospital} />
+          <Route exact path="/health" component={Health} />
          
         </Switch>
         <ToastContainer autoClose={3000} hideProgressBar />
