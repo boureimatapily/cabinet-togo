@@ -150,14 +150,14 @@ function SignedoutNavBar(){
         </ListItem>
 
         <ListItem button>  
-            <Link to="/login">
-              <ListItemText primary="Login" />
+            <Link to="/hospital">
+              <ListItemText primary="Hospital" />
             </Link>
         </ListItem>
 
         <ListItem button>  
-            <Link to="/signup">
-              <ListItemText primary="Sign up" />
+            <Link to="/health">
+              <ListItemText primary="Health" />
             </Link>
         </ListItem>
       </List>
@@ -293,13 +293,13 @@ function SignedoutNavBar(){
             </Link>
           </Typography>
           <Typography  className={classes.navButtonContainer} >
-            <Link to="/login"  className={classes.navButton}>
-              Login
+            <Link to="/hospital"  className={classes.navButton}>
+              Hospital
             </Link>
           </Typography>
         <Typography   className={classes.navButtonContainer}>
-            <Link to="/signup"  className={classes.navButton}>
-              Sign up
+            <Link to="/health"  className={classes.navButton}>
+              Health Profesional
             </Link>
           </Typography>
 
