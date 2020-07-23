@@ -1,174 +1,162 @@
-import React from 'react';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import PropTypes from 'prop-types';
+import React from "react";
+import { fade, makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import InputBase from "@material-ui/core/InputBase";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import MoreIcon from "@material-ui/icons/MoreVert";
+import PropTypes from "prop-types";
 
 //import { Link } from '@material-ui/core';
-import { Grid, Container } from '@material-ui/core';
-import {logout} from "../redux/Actions/authActions"
-import { connect } from 'react-redux';
-import Hidden from '@material-ui/core/Hidden';
+import { Grid, Container } from "@material-ui/core";
+import { logout } from "../redux/Actions/authActions";
+import { connect } from "react-redux";
+import Hidden from "@material-ui/core/Hidden";
 
-import clsx from 'clsx';
-import {Link }from 'react-router-dom';
+import clsx from "clsx";
+import { Link } from "react-router-dom";
 
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-
-
-
-
+import Drawer from "@material-ui/core/Drawer";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
-
   },
-  appBar:{
-    backgroundColor:"#2bd69a"
+  appBar: {
+    backgroundColor: "#2bd69a",
   },
-  navButton:{
-    color:"#ffff",
-    marginRight:10,
-    fontWeight:"bold"
+  navButton: {
+    color: "#ffff",
+    marginRight: 10,
+    fontWeight: "bold",
   },
   list: {
     width: 250,
   },
   fullList: {
-    width: 'auto',
+    width: "auto",
   },
-  navButtonContainer:{
-    marginTop:10,
+  navButtonContainer: {
+    marginTop: 10,
   },
-  
+
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
+    display: "none",
+    [theme.breakpoints.up("sm")]: {
+      display: "block",
     },
   },
   search: {
-    position: 'relative',
+    position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
+    "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
-      width: 'auto',
+      width: "auto",
     },
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   inputRoot: {
-    color: 'inherit',
+    color: "inherit",
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
     },
   },
   sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
     },
   },
   sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
+    display: "flex",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
     },
   },
- 
-
 }));
 
-
-function SignedoutNavBar(){
+function SignedoutNavBar() {
   const classes = useStyles();
   // Drawler
   const [state, setState] = React.useState({
-
     left: false,
-   
   });
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
 
     setState({ ...state, [anchor]: open });
   };
   const list = (anchor) => (
-   
-        <div
+    <div
       className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+        [classes.fullList]: anchor === "top" || anchor === "bottom",
       })}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <ListItem button>  
-            <Link to="/">
-              <ListItemText primary="Home" />
-            </Link>
+        <ListItem button>
+          <Link to="/">
+            <ListItemText primary="Home" />
+          </Link>
         </ListItem>
 
-        <ListItem button>  
-            <Link to="/hospital">
-              <ListItemText primary="Hospital" />
-            </Link>
+        <ListItem button>
+          <Link to="/hospital">
+            <ListItemText primary="Hospital" />
+          </Link>
         </ListItem>
 
-        <ListItem button>  
-            <Link to="/health">
-              <ListItemText primary="Health" />
-            </Link>
+        <ListItem button>
+          <Link to="/health">
+            <ListItemText primary="Health" />
+          </Link>
         </ListItem>
       </List>
-     
     </div>
-   
-    
   );
 
   //Drawler
-
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -193,14 +181,14 @@ function SignedoutNavBar(){
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const menuId = 'primary-search-account-menu';
+  const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
@@ -209,18 +197,17 @@ function SignedoutNavBar(){
     </Menu>
   );
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-    
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
@@ -234,114 +221,108 @@ function SignedoutNavBar(){
       </MenuItem>
     </Menu>
   );
-  
 
   return (
-    <Container fixed>
+    <Container maxWidth="lg" min-width="sm">
       <Grid container className={classes.grow} spacing={2}>
-        <Grid item lg={12} md={12} sm={12} xl={12} >
+        <Grid item lg={12} md={12} sm={12} xl={12}>
+          <div>
+            <AppBar position="static" className={classes.appBar}>
+              <Toolbar>
+                <Hidden smUp>
+                  {["left"].map((anchor) => (
+                    <React.Fragment key={anchor}>
+                      <IconButton
+                        edge="start"
+                        className={classes.menuButton}
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={toggleDrawer(anchor, true)}
+                      >
+                        <MenuIcon />
+                      </IconButton>
+                      <Drawer
+                        anchor={anchor}
+                        open={state[anchor]}
+                        onClose={toggleDrawer(anchor, false)}
+                      >
+                        {list(anchor)}
+                      </Drawer>
+                    </React.Fragment>
+                  ))}
+                </Hidden>
 
-      <div>
+                <Typography className={classes.title} variant="h6" noWrap>
+                  Covid Care
+                </Typography>
+                <div className={classes.search}>
+                  <div className={classes.searchIcon}>
+                    <SearchIcon />
+                  </div>
+                  <InputBase
+                    placeholder="Search…"
+                    classes={{
+                      root: classes.inputRoot,
+                      input: classes.inputInput,
+                    }}
+                    inputProps={{ "aria-label": "search" }}
+                  />
+                </div>
+                <div className={classes.grow} />
+                <div className={classes.sectionDesktop}>
+                  <Typography className={classes.navButtonContainer}>
+                    <Link to="/" className={classes.navButton}>
+                      Home
+                    </Link>
+                  </Typography>
+                  <Typography className={classes.navButtonContainer}>
+                    <Link to="/hospital" className={classes.navButton}>
+                      Hospital
+                    </Link>
+                  </Typography>
+                  <Typography className={classes.navButtonContainer}>
+                    <Link to="/health" className={classes.navButton}>
+                      Health Profesional
+                    </Link>
+                  </Typography>
 
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
-        <Hidden smUp> 
-        {['left'].map((anchor) => (
-        <React.Fragment key={anchor}>
-           <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-            onClick={toggleDrawer(anchor, true)}
-          >
-             <MenuIcon />
-          </IconButton>
-          <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-            {list(anchor)}
-          </Drawer>
-
-         
-        </React.Fragment>
-      ))}
-       </Hidden>    
-     
-
-          
-          <Typography className={classes.title} variant="h6" noWrap>
-             Covid Care
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
+                  <IconButton
+                    edge="end"
+                    aria-label="account of current user"
+                    aria-controls={menuId}
+                    aria-haspopup="true"
+                    onClick={handleProfileMenuOpen}
+                    color="inherit"
+                  >
+                    <AccountCircle />
+                  </IconButton>
+                </div>
+                <div className={classes.sectionMobile}>
+                  <IconButton
+                    aria-label="show more"
+                    aria-controls={mobileMenuId}
+                    aria-haspopup="true"
+                    onClick={handleMobileMenuOpen}
+                    color="inherit"
+                  >
+                    <MoreIcon />
+                  </IconButton>
+                </div>
+              </Toolbar>
+            </AppBar>
+            {renderMobileMenu}
+            {renderMenu}
           </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-           
-          <Typography className={classes.navButtonContainer} >
-            <Link to="/"  className={classes.navButton}>
-              Home
-            </Link>
-          </Typography>
-          <Typography  className={classes.navButtonContainer} >
-            <Link to="/hospital"  className={classes.navButton}>
-              Hospital
-            </Link>
-          </Typography>
-        <Typography   className={classes.navButtonContainer}>
-            <Link to="/health"  className={classes.navButton}>
-              Health Profesional
-            </Link>
-          </Typography>
-
-
-
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </div>
+        </Grid>
       </Grid>
-      </Grid>
-      </Container>
+    </Container>
   );
 }
 
 SignedoutNavBar.propTypes = {
-  width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
+  width: PropTypes.oneOf(["lg", "md", "sm", "xl", "xs"]).isRequired,
 };
 // const mapStateToProps = ({currentUser}) => {
 //   return { currentUser }
 // }
-export default connect(null,{logout})(SignedoutNavBar )
+export default connect(null, { logout })(SignedoutNavBar);
