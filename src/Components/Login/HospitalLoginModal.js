@@ -1,6 +1,5 @@
 import React from "react";
 import { withStyles } from "@material-ui/styles";
-import Paper from "@material-ui/core/Paper";
 import { TextField, Button, Typography, Grid, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { authenticateWithGoogle, login} from "../../redux/Actions/authActions"
@@ -13,13 +12,7 @@ import { connect } from "react-redux";
 
 const styles = {
  
-  loginSection: {
-    paddingLeft: 50,
-    paddingRight:50,
-    marginTop: 50,
-    width:500,
-    height:500
-  },
+  
 
   otheraccounts:{
       display:"flex",
@@ -27,8 +20,15 @@ const styles = {
   },
   btnotheraccounts:{
       fontWeight:"bold",
-      marginRight:10
-  }
+      marginRight:10,
+      marginBottom:10
+  },
+  getStartButton: {
+    color: "white",
+    backgroundColor: "#2bd69a",
+    fontWeight: "bolder",
+    marginBottom: 20,
+  },
 };
 
 
@@ -66,9 +66,8 @@ class Login extends React.Component {
       <Grid container> 
      
       <Grid item xs={12} md={12} lg={12} > 
-    <div className={classes.root}>
-      <Paper className={classes.loginSection}>
-        <h2>Log In to Covid Care</h2>
+    <div className={classes.loginSection}>
+    
         <form autoComplete={"false"} className={classes.formSection} onSubmit={this.handleSubmit} >
           <TextField
             id="standard-basic"
@@ -107,19 +106,13 @@ class Login extends React.Component {
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.Btn}
+              className={classes.getStartButton}
               //   disabled={loginRequest}
             >
               Login
             </Button>
           </p>
         
-          <Typography
-            variant="body1"
-            style={{ textAlign: "center", marginTop: 20, marginBottom: 20 }}
-          >
-            Don't have an account? <Link to="/signup">Sing up</Link>
-          </Typography>
         </form>
         <h3>Log In with Another Account</h3>
         <div className={classes.otheraccounts}>
@@ -146,7 +139,7 @@ class Login extends React.Component {
             Twitter
           </Button>
         </div>
-      </Paper>
+
     </div>
     </Grid>
 
