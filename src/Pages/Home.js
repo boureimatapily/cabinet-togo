@@ -69,7 +69,7 @@ class Home extends React.Component {
                 <div className={classes.contact}>
                   <Paper className={classes.contactPaper}>
                     <LocalHospitalIcon
-                      style={{ color: "#2bd69a", width: 50, height: 50 }}
+                      style={{ color: "red", width: 50, height: 50 }}
                     />
                     <h2>Hospital </h2>
 
