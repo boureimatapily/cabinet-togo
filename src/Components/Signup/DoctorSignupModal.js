@@ -134,11 +134,11 @@ class HospitalSignupModal extends React.Component {
               <div className={classes.Column}>
                 <TextField
                   id="profession"
-                  label="username"
+                  label="profession"
                   fullWidth
                   name="profession"
                   type="text"
-                  placeholder="username"
+                  placeholder="profession"
               
                 //   value={values.handle}
                 //   onChange={handleChange}
@@ -179,7 +179,7 @@ class HospitalSignupModal extends React.Component {
               Already have an account? <Link to={"/login"}>Log in</Link>
             </Typography>
           </form>
-          <h3>Log In with Another Account</h3>
+          <h3>Sign up with Another Account</h3>
         <div className={classes.otheraccounts}>
         <Button
             variant="contained"
