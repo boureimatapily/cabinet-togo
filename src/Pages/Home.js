@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, Paper, Button } from "@material-ui/core";
+import { Container, Grid, Paper, Button, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
 import covid from "../Images/covid.jpg";
 
@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
 // Making styles
 const styles = (theme) => ({
   firstContainer: {
@@ -24,26 +24,26 @@ const styles = (theme) => ({
     marginBottom: 20,
     fontWeight: "bolder",
   },
- 
+
   covidImage: {
     width: "300",
     height: 300,
   },
-  contact:{
+  contact: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
     marginTop: 10,
     alignItems: "center",
   },
-  contactPaper:{
+  contactPaper: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",
     marginTop: 10,
     alignItems: "center",
-    width:250
-  }
+    width: 250,
+  },
 });
 
 class Home extends React.Component {
@@ -58,7 +58,7 @@ class Home extends React.Component {
           style={{ marginTop: 10 }}
           className={classes.firstContainer}
         >
-          <Grid item sm={6} xs={6} md={6} lg={6}>
+          <Grid item sm={12} xs={12} md={6} lg={6}>
             <Paper elevation={0}>
               <div className={classes.firstContainerFirstDiv}>
                 <h2> Fight COVID-19 With Codetrain and Covid Care Platform </h2>
@@ -68,9 +68,11 @@ class Home extends React.Component {
                 </h4>
                 <div className={classes.contact}>
                   <Paper className={classes.contactPaper}>
-                  <LocalHospitalIcon style={{color:"#2bd69a", width:50, height:50}} />
+                    <LocalHospitalIcon
+                      style={{ color: "#2bd69a", width: 50, height: 50 }}
+                    />
                     <h2>Hospital </h2>
-                    
+
                     <Link to="/hospital">
                       <Button
                         className={classes.getStartButton}
@@ -83,35 +85,38 @@ class Home extends React.Component {
                     </Link>
                   </Paper>
                   <Paper className={classes.contactPaper}>
-                    <PersonAddIcon style={{color:"#2bd69a", width:50, height:50}}/>
+                    <PersonAddIcon
+                      style={{ color: "#2bd69a", width: 50, height: 50 }}
+                    />
                     <h2>health professionals </h2>
                     <Link to="/health">
-                    <Button
-                      className={classes.getStartButton}
-                      variant="contained"
-                      color="primary"
-                    >
-                      Get Start 
-                    </Button>
-                  </Link>
+                      <Button
+                        className={classes.getStartButton}
+                        variant="contained"
+                        color="primary"
+                      >
+                        Get Start
+                      </Button>
+                    </Link>
                   </Paper>
-                  
                 </div>
               </div>
             </Paper>
           </Grid>
-          <Grid item sm={6} xs={6} md={6} lg={6}>
-            <Paper elevation={0}>
-              <div>
-                <img
-                  src={covid}
-                  alt="covid-care"
-                  className={classes.covidImage}
-                />
-              </div>
-            </Paper>
+          <Hidden smDown>
+            <Grid item  md={6} lg={6}>
+              <Paper elevation={0}>
+                <div>
+                  <img
+                    src={covid}
+                    alt="covid-care"
+                    className={classes.covidImage}
+                  />
+                </div>
+              </Paper>
+            </Grid>
+            </Hidden>
           </Grid>
-        </Grid>
       </Container>
     );
   }
