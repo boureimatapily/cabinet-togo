@@ -5,6 +5,7 @@ import { Grid, Container } from "@material-ui/core";
 // import { Link } from "react-router-dom";
 import hospital3 from "../Images/hospital.jpg";
 import HospitalLoginModal from "../Components/Login/HospitalLoginModal";
+import HospitalSignupModal from "../Components/Signup/HospitalSignupModal";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -78,7 +79,7 @@ export default function Hospital(props) {
 
         <Grid item xs={6} md={6} lg={6}>
           <Paper className={classes.healthDoctors} elevation={3}>
-            <h1>Signup</h1>
+            <HospitalSignupModal />
           </Paper>
         </Grid>
       </Grid>

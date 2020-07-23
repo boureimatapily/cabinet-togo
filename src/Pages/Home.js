@@ -31,8 +31,15 @@ const styles = (theme) => ({
   getStartButton: {
     color: "white",
     backgroundColor: "#2bd69a",
-    width: 200,
+    width: 400,
     fontWeight: "bolder",
+  },
+  getStartButtonTwo: {
+    color: "white",
+    backgroundColor: "#2bd69a",
+    width: 400,
+    fontWeight: "bolder",
+    marginTop:20
   },
   covidImage: {
     width: "300",
@@ -73,9 +80,22 @@ class Home extends React.Component {
             <Paper elevation={0} className={classes.firstContainer}>
               <div className={classes.firstContainerFirstDiv}>
                 <h2> Fight COVID-19 With Codetrain and Covid Care Platform </h2>
-                <h4> Voluptate fugiat reprehenderit sint aliquip </h4>
-                <Link to="/login">
-                <Button className={classes.getStartButton}>Get Start</Button>
+                <h4> Are you Doctor, health professional or Hospital Managwer</h4>
+                <Link to="/hospital">
+                <Button className={classes.getStartButton}
+                
+                variant="contained"
+                color="primary"
+                > Get Start as Hospital
+                </Button>
+                  </Link>
+                  <Link to="/health">
+                <Button className={classes.getStartButtonTwo}
+                
+                variant="contained"
+                color="primary"
+                >Get Start as health professionals
+                </Button>
                   </Link>
               </div>
 
