@@ -32,7 +32,7 @@ const styles = {
 };
 
 
-class Login extends React.Component {
+class HospitalLoginModal extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -150,4 +150,4 @@ class Login extends React.Component {
 }
 
 
-export default  withStyles(styles)(connect(null,{login, authenticateWithGoogle})(Login))
+export default  withStyles(styles)(connect(null,{login, authenticateWithGoogle})(HospitalLoginModal))
