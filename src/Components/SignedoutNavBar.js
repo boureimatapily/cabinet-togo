@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appBar: {
-    backgroundColor: "#2bd69a",
+    backgroundColor: "blue",
   },
   navButton: {
     color: "#ffff",
@@ -214,6 +214,7 @@ function SignedoutNavBar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
+          
         >
           <AccountCircle />
         </IconButton>
@@ -252,9 +253,9 @@ function SignedoutNavBar() {
                 </Hidden>
 
                 <Typography className={classes.title} variant="h6" noWrap>
-                  Covid Care
+                  Cabinet Comptable Togo
                 </Typography>
-                <div className={classes.search}>
+                <div className={classes.search} style={{backgroundColor:"#e3e3e3", color:"black"}}>
                   <div className={classes.searchIcon}>
                     <SearchIcon />
                   </div>

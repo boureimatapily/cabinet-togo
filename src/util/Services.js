@@ -9,6 +9,8 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Card, Paper, Grid } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
+import {useSpring, animated} from 'react-spring'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,9 +31,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Services({ image, description, buttonText, link }) {
   const classes = useStyles();
+  const props = useSpring({opacity: 1, from: {opacity: 0}})
 
   return (
-    <Grid container>
+    <animated.div style={props}>
+            <div>
+                  <Grid container>
       <Grid item sm={12} xs={12} md={12} lg={12}>
         <div className={classes.root}>
           <Paper className={classes.cardPaper}>
@@ -73,5 +78,8 @@ export default function Services({ image, description, buttonText, link }) {
         </div>
       </Grid>
     </Grid>
-  );
+            </div>
+            </animated.div>
+          )
+        
 }
