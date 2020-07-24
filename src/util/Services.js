@@ -7,60 +7,67 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { Card, Paper } from "@material-ui/core";
-
+import { Card, Paper, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    },
-    cardPaper:{
-        margin:10
-    },
-    content:{
-        textAlign:"center"
-    },
-    imgCard:{
-      width:200,
-      height:200
-    }
-  
+  },
+  cardPaper: {
+    margin: 10,
+  },
+  content: {
+    textAlign: "center",
+  },
+  imgCard: {
+    width: 200,
+    height: 200,
+  },
 }));
 
-export default function Services({image, description, buttonText}) {
+export default function Services({ image, description, buttonText }) {
   const classes = useStyles();
-   
+
   return (
-    <div className={classes.root}>
-         <Paper className={classes.cardPaper}>
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            alt="Contemplative Reptile"
-            image={image}
-          
-            title="Contemplative Reptile"
-            className={classes.imgCard}
-          >
-            
-         </CardMedia> 
-          <CardContent className={classes.content}>
-           
-            <Typography variant="body2" color="textSecondary" component="p" 
-            style={{ color:"black", fontWeight:"bold"}}>
-                {description}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions style={{marginLeft:"30%"}}>
-          <Button style={{backgroundColor:"#2bd69a", color:"white", fontWeight:"bold"}}>
-            {buttonText}
-          </Button>
-          
-        </CardActions>
-      </Card>
-      </Paper>
-    </div>
+    <Grid container>
+      <Grid item sm={12} xs={12} md={12} lg={12}>
+        <div className={classes.root}>
+          <Paper className={classes.cardPaper}>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt="Contemplative Reptile"
+                  image={image}
+                  title="Contemplative Reptile"
+                  className={classes.imgCard}
+                ></CardMedia>
+                <CardContent className={classes.content}>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                    style={{ color: "black", fontWeight: "bold" }}
+                  >
+                    {description}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions style={{ marginLeft: "30%" }}>
+                <Button
+                  style={{
+                    backgroundColor: "#2bd69a",
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {buttonText}
+                </Button>
+              </CardActions>
+            </Card>
+          </Paper>
+        </div>
+      </Grid>
+    </Grid>
   );
 }
