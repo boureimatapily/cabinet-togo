@@ -8,24 +8,26 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Card, Paper, Grid } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   cardPaper: {
-    margin: 10,
+    margin: 5,
   },
   content: {
     textAlign: "center",
   },
   imgCard: {
-    width: 200,
-    height: 200,
+    width: 100,
+    height: 100,
+    margin:"auto"
   },
 }));
 
-export default function Services({ image, description, buttonText }) {
+export default function Services({ image, description, buttonText, link }) {
   const classes = useStyles();
 
   return (
@@ -54,15 +56,17 @@ export default function Services({ image, description, buttonText }) {
                 </CardContent>
               </CardActionArea>
               <CardActions style={{ marginLeft: "30%" }}>
+                <NavLink to={link}> 
                 <Button
                   style={{
-                    backgroundColor: "#2bd69a",
+                    backgroundColor: "blue",
                     color: "white",
                     fontWeight: "bold",
                   }}
                 >
                   {buttonText}
                 </Button>
+                </NavLink>
               </CardActions>
             </Card>
           </Paper>

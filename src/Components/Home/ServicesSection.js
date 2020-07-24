@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   serviceRoot:{
     width:300,
     height:300,
-    marginBottom:20
   }
 }));
 
@@ -25,49 +24,57 @@ export default function ServicesSection() {
       id: 1,
       iconImage: require("../../Images/chart.png"),
       description: "Bookkeeping",
-      buttonText: "Get Start",
+      buttonText: "more...",
+      link:"/bookkeeping"
     },
     {
       id: 2,
-      iconImage: require("../../Images/covid.jpg"),
+      iconImage: require("../../Images/account.png"),
       description: "Accounting and tax assistance",
-      buttonText: "Get Start",
+      buttonText: "more...",
+      link:"/account"
     },
     {
       id: 3,
-      iconImage: require("../../Images/covid.jpg"),
+      iconImage: require("../../Images/audit.png"),
       description: "Accounting audits",
-      buttonText: "Get Start",
+      buttonText: "more...",
+      link:"/audit"
     },
     {
       id: 4,
-      iconImage: require("../../Images/covid.jpg"),
+      iconImage: require("../../Images/judge.png"),
       description: "Judicial expertise",
-      buttonText: "Get Start",
+      buttonText: "more...",
+      link:"/judge"
     },
     {
       id: 5,
-      iconImage: require("../../Images/covid.jpg"),
+      iconImage: require("../../Images/pen.png"),
       description: "Project studies",
-      buttonText: "Get Start",
+      buttonText: "more...",
+      link:"/project"
     },
     {
       id: 6,
-      iconImage: require("../../Images/covid.jpg"),
+      iconImage: require("../../Images/finance.png"),
       description: "Preparation of financial statements",
-      buttonText: "Get Start",
+      buttonText: "more...",
+      link:"/finance"
     },
     {
       id: 7,
-      iconImage: require("../../Images/covid.jpg"),
+      iconImage: require("../../Images/judgeI.png"),
       description: "Training",
-      buttonText: "Get Start",
+      buttonText: "more...",
+      link:"/training"
     },
     {
       id: 8,
-      iconImage: require("../../Images/covid.jpg"),
+      iconImage: require("../../Images/contact.png"),
       description: "All Others infos",
-      buttonText: "Get Start",
+      buttonText: "more...",
+      link:"/contact"
     },
     
    
@@ -83,6 +90,7 @@ export default function ServicesSection() {
                 description={list.description}
                 buttonText={list.buttonText}
                 image={list.iconImage}
+                link={list.link}
               />
             </div>
           ))}
