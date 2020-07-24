@@ -1,13 +1,15 @@
 import React from "react";
 import { Container, Grid, Paper, Button, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/styles";
-import covid from "../Images/covid.jpg";
-
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
-import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import pierre from "../Images/pierre.png";
+import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
+import InfoIcon from '@material-ui/icons/Info';
+import ServicesSection from "../Components/Home/ServicesSection";
+
+
 // Making styles
 const styles = (theme) => ({
   firstContainer: {
@@ -17,17 +19,30 @@ const styles = (theme) => ({
     marginTop: 10,
     alignItems: "center",
   },
+  secondContainer:{
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    marginTop: 10,
+    alignItems: "center",
+  },
 
   getStartButton: {
     color: "white",
-    backgroundColor: "#2bd69a",
+    backgroundColor: "blue",
     marginBottom: 20,
     fontWeight: "bolder",
   },
 
-  covidImage: {
-    width: "300",
-    height: 300,
+  pierre: {
+    height: 350,
+    width: 350,
+    marginLeft:50,
+    marginTop:50,
+    borderTopLeftRadius: 150,
+    borderTopRightRadius: 50,
+    borderBottomLeftRadius: 100,
+    borderBottomRightRadius: 150,
   },
   contact: {
     display: "flex",
@@ -61,19 +76,20 @@ class Home extends React.Component {
           <Grid item sm={12} xs={12} md={6} lg={6}>
             <Paper elevation={0}>
               <div className={classes.firstContainerFirstDiv}>
-                <h2> Fight COVID-19 With Codetrain and Covid Care Platform </h2>
+                <h2> Cabinet Comptable Antime Togo </h2>
                 <h4>
                   {" "}
-                  Are you Doctor, health professional or Hospital Managwer
-                </h4>
+                  The accounting firm Antimé TOGO is registered with the National Order 
+                  of Chartered Accountants and Chartered Accountants of Mali (ONECCA-MALI).
+                  </h4>
                 <div className={classes.contact}>
                   <Paper className={classes.contactPaper}>
-                    <LocalHospitalIcon
-                      style={{ color: "red", width: 50, height: 50 }}
+                    <ContactPhoneIcon
+                      style={{ color: "black", width: 50, height: 50 }}
                     />
-                    <h2>Hospital </h2>
+                    <h2>Contact us </h2>
 
-                    <Link to="/hospital">
+                    <Link to="/contact">
                       <Button
                         className={classes.getStartButton}
                         variant="contained"
@@ -85,11 +101,11 @@ class Home extends React.Component {
                     </Link>
                   </Paper>
                   <Paper className={classes.contactPaper}>
-                    <PersonAddIcon
-                      style={{ color: "#2bd69a", width: 50, height: 50 }}
+                    <InfoIcon
+                      style={{ color: "blue", width: 50, height: 50 }}
                     />
-                    <h2>health professionals </h2>
-                    <Link to="/health">
+                    <h2>About us</h2>
+                    <Link to="/about">
                       <Button
                         className={classes.getStartButton}
                         variant="contained"
@@ -108,15 +124,27 @@ class Home extends React.Component {
               <Paper elevation={0}>
                 <div>
                   <img
-                    src={covid}
-                    alt="covid-care"
-                    className={classes.covidImage}
+                    src={pierre}
+                    alt="pierre"
+                    className={classes.pierre}
                   />
                 </div>
               </Paper>
             </Grid>
             </Hidden>
           </Grid>
+          <Grid container>
+            <Grid item sm={12} xs={12} md={12} lg={12} className={classes.secondContainer}>
+                <h1>OUR SERVICES</h1>
+            </Grid>
+          </Grid>
+          <Grid container>
+            <Grid item sm={12} xs={12} md={12} lg={12} className={classes.secondContainer}>
+                <ServicesSection />
+            </Grid>
+          </Grid>
+
+
       </Container>
     );
   }

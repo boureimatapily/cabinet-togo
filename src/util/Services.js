@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
     },
     content:{
         textAlign:"center"
+    },
+    imgCard:{
+      width:200,
+      height:200
     }
   
 }));

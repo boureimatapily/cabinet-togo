@@ -224,8 +224,7 @@ function SignedoutNavBar() {
 
   return (
     <Container maxWidth="lg" min-width="xs">
-      <Grid container>
-        <Grid item lg={12} md={12} sm={12} xl={12}>
+      
           <div>
             <AppBar position="static" className={classes.appBar}>
               <Toolbar>
@@ -313,8 +312,6 @@ function SignedoutNavBar() {
             {renderMobileMenu}
             {renderMenu}
           </div>
-        </Grid>
-      </Grid>
     </Container>
   );
 }

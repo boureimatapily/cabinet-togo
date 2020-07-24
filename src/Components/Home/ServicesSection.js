@@ -7,7 +7,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display:"flex",
     flexDirection:"row",
-    justifyContent:"space-evenly"
+    justifyContent:"space-evenly",
+    flexWrap:"wrap"
   },
   
 }));
@@ -18,13 +19,13 @@ export default function ServicesSection() {
           {
               id:1,
             iconImage:require('../../Images/covid.jpg'),
-            description:"Hospital Registration",
+            description:"Bookkeeping",
             buttonText:"Get Start"
           },
           {
             id:2,
             iconImage:require('../../Images/covid.jpg'),
-            description:"All information about Patient",
+            description:"Accounting and tax assistance",
             buttonText:"Get Start"
           },
           {
@@ -38,7 +39,32 @@ export default function ServicesSection() {
             iconImage:require('../../Images/covid.jpg'),
             description:"Health Profesional communication",
             buttonText:"Get Start"
-          }
+          },
+          {
+            id:5,
+            iconImage:require('../../Images/covid.jpg'),
+            description:"Health Profesional communication",
+            buttonText:"Get Start"
+          },
+          {
+            id:6,
+            iconImage:require('../../Images/covid.jpg'),
+            description:"Health Profesional communication",
+            buttonText:"Get Start"
+          },
+          {
+            id:7,
+            iconImage:require('../../Images/covid.jpg'),
+            description:"Health Profesional communication",
+            buttonText:"Get Start"
+          },
+          {
+            id:8,
+            iconImage:require('../../Images/covid.jpg'),
+            description:"Health Profesional communication",
+            buttonText:"Get Start"
+          },
+        
   ]
  
   return (
