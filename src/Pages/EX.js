@@ -1,4 +1,9 @@
+const handleLogout = event => {
+  event.preventDefault()
+  logout(() => this.props.history.push("/"))
+  
 
+}
 
 
 

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 // import Paper from "@material-ui/core/Paper";
@@ -8,8 +7,8 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withStyles } from "@material-ui/styles";
 import LinkMUI from "@material-ui/core/Link";
-  
-
+import { register } from "../../redux/Actions/authActions";
+// import firebase from '../../Config/fbconfig'
 
 const styles ={
   root:{
@@ -44,8 +43,12 @@ class HospitalSignupModal extends React.Component {
     super(props)
     this.state = {
       email:"",
-      password:""
+      password:"",
+      hospitalid:"",
+      hospitalname:"",
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (e) =>{
@@ -53,18 +56,30 @@ class HospitalSignupModal extends React.Component {
       [e.target.name]:e.target.value
     })
   }
-
+  
   onSignup = ()=>{
     this.props.history.push('/');
 }
-  
+
   handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
-
-    this.props.register(email, password, this.onSignup())
+    const { email, password} = this.state;
    
+      // const newUser = {
+      //   email: this.state.email,
+      //   password: this.state.password,
+      //   hospitalid: this.state.hospitalid,
+      //   hospitalname: this.state.hospitalname,
+        
+      // };
+      // console.log(newUser)
+      // console.log(newUser);
+      this.props.register(email, password, this.onSignup)
+
   };
+
+  // Redirect if User login
+
 
   render(){
     const { classes } = this.props;
@@ -76,16 +91,15 @@ class HospitalSignupModal extends React.Component {
     <div className={classes.SignupSection}>
      
         <h2>Get Started for Free</h2>
-        <form autoComplete={"false"} className={classes.formSection}onSubmit={this.handleSubmit}>
+        <form autoComplete={"false"} className={classes.formSection} onSubmit={this.handleSubmit}>
             <TextField
               id="standard-basic"
               label="Email Address *"
               placeholder="Email address for mail confirmation"
               fullWidth
               name="email"
-              // value={this.state.email}
+              value={this.state.email}
               autoFocus
-              // value={values.email}
               onChange={this.handleChange}
             />
             <div className={classes.TwoColumns}>
@@ -97,7 +111,7 @@ class HospitalSignupModal extends React.Component {
                   fullWidth
                   name="password"
                   onChange={this.handleChange}
-                  // value={values.password}                //   onChange={handleChange}
+                  value={this.state.password}                //   onChange={handleChange}
                 />
               </div>
             
@@ -111,8 +125,8 @@ class HospitalSignupModal extends React.Component {
                   fullWidth
                   name="hospitalname"
                   type="text"
-                //   value={values.firstname}
-                //   onChange={handleChange}
+                  value={this.state.hospitalname} 
+                  onChange={this.handleChange}
                 />
               </div>
               
@@ -120,15 +134,14 @@ class HospitalSignupModal extends React.Component {
             <div className={classes.TwoColumns}>
               <div className={classes.Column}>
                 <TextField
-                  id="handle"
+                  id="hospitalid"
                   label="Hospital ID"
                   fullWidth
-                  name="handle"
+                  name="hospitalid"
                   type="text"
                   placeholder="Hospital ID"
-              
-                //   value={values.handle}
-                //   onChange={handleChange}
+                  value={this.state.hospitalid} 
+                 onChange={this.handleChange}
                 />
               </div>
              
@@ -163,7 +176,7 @@ class HospitalSignupModal extends React.Component {
               variant="body1"
               style={{ textAlign: "center", marginTop: 10, marginBottom: 20 }}
             >
-              Already have an account? <Link to={"/login"}>Log in</Link>
+              Already have an account? <Link to={"/hospital"}>Log in</Link>
             </Typography>
           </form>
           <h3>Sign up In with Another Account</h3>

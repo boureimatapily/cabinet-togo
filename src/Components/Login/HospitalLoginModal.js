@@ -12,8 +12,6 @@ import { connect } from "react-redux";
 
 const styles = {
  
-  
-
   otheraccounts:{
       display:"flex",
       marginBottom:10
@@ -39,6 +37,8 @@ class HospitalLoginModal extends React.Component {
       email:"",
       password:""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (e) =>{
@@ -47,14 +47,11 @@ class HospitalLoginModal extends React.Component {
     })
   }
 
-  onLogin = ()=>{
-    this.props.history.push('/');
-}
   handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = this.state;
 
-    this.props.login(email, password, this.onLogin())
+    this.props.login(email, password,()=>{this.props.history.push('/')})
   };
 
     

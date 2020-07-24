@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { withStyles } from "@material-ui/styles";
 import LinkMUI from "@material-ui/core/Link";
-
+import { doctorsregister } from "../../redux/Actions/authActions";
 
 
 const styles ={
@@ -44,8 +44,12 @@ class HospitalSignupModal extends React.Component {
     super(props)
     this.state = {
       email:"",
-      password:""
+      password:"",
+      fullname:"",
+      username:""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (e) =>{
@@ -53,18 +57,24 @@ class HospitalSignupModal extends React.Component {
       [e.target.name]:e.target.value
     })
   }
-
-  onSignup = ()=>{
+  onLogin = ()=>{
     this.props.history.push('/');
 }
   
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { email, password } = this.state;
+handleSubmit = (e) => {
+  e.preventDefault();
+  const { email, password} = this.state;
+    // const newUser = {
+    //   email: this.state.email,
+    //   password: this.state.password,
+    //   fullname: this.state.fullname,
+    //   username: this.state.username,
+      
+    // };
+    // console.log(newUser);
+    this.props.doctorsregister(email, password, this.onLogin);
 
-    this.props.register(email, password, this.onSignup())
-   
-  };
+};
 
   render(){
     const { classes } = this.props;
@@ -83,9 +93,8 @@ class HospitalSignupModal extends React.Component {
               placeholder="Email address for mail confirmation"
               fullWidth
               name="email"
-              // value={this.state.email}
+              value={this.state.email}
               autoFocus
-              // value={values.email}
               onChange={this.handleChange}
             />
             <div className={classes.TwoColumns}>
@@ -97,7 +106,7 @@ class HospitalSignupModal extends React.Component {
                   fullWidth
                   name="password"
                   onChange={this.handleChange}
-                  // value={values.password}                //   onChange={handleChange}
+                  value={this.state.password}                //   onChange={handleChange}
                 />
               </div>
             
@@ -111,8 +120,8 @@ class HospitalSignupModal extends React.Component {
                   fullWidth
                   name="fullname"
                   type="text"
-                //   value={values.firstname}
-                //   onChange={handleChange}
+                  value={this.state.fullname}
+                  onChange={this.handleChange}
                 />
               </div>
               
@@ -120,15 +129,15 @@ class HospitalSignupModal extends React.Component {
             <div className={classes.TwoColumns}>
               <div className={classes.Column}>
                 <TextField
-                  id="handle"
+                  id="username"
                   label="username"
                   fullWidth
-                  name="handle"
+                  name="username"
                   type="text"
                   placeholder="username"
               
-                //   value={values.handle}
-                //   onChange={handleChange}
+                  value={this.state.username}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className={classes.Column}>
@@ -140,8 +149,8 @@ class HospitalSignupModal extends React.Component {
                   type="text"
                   placeholder="profession"
               
-                //   value={values.handle}
-                //   onChange={handleChange}
+                  value={this.state.profession}
+                  onChange={this.handleChange}
                 />
               </div>
              
