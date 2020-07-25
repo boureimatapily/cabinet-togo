@@ -11,6 +11,8 @@ import Training from './Components/Services/Training'
 // import AppRoute from "./util/AppRoute";
 
 import Judge from "./Components/Services/Judge";
+import Contact from "./Pages/Contact";
+import About from "./Pages/About";
 
 
 
@@ -35,6 +37,8 @@ function App(){
           <Route exact path="/project" component={Project} />
           <Route exact path="/judge" component={Judge} />
           <Route exact path="/training" component={Training} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/about" component={About} />
 
         </Switch>
       </React.Fragment>
