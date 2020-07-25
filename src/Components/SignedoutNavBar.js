@@ -14,9 +14,7 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import PropTypes from "prop-types";
 
 //import { Link } from '@material-ui/core';
-import { Grid, Container } from "@material-ui/core";
-import { logout } from "../redux/Actions/authActions";
-import { connect } from "react-redux";
+import { Container } from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
 
 import clsx from "clsx";
@@ -142,14 +140,14 @@ function SignedoutNavBar() {
         </ListItem>
 
         <ListItem button>
-          <Link to="/hospital">
-            <ListItemText primary="Hospital" />
+          <Link to="/about">
+            <ListItemText primary="About Us" />
           </Link>
         </ListItem>
 
         <ListItem button>
-          <Link to="/health">
-            <ListItemText primary="Health" />
+          <Link to="/contact">
+            <ListItemText primary="Contact Us" />
           </Link>
         </ListItem>
       </List>
@@ -276,13 +274,13 @@ function SignedoutNavBar() {
                     </Link>
                   </Typography>
                   <Typography className={classes.navButtonContainer}>
-                    <Link to="/hospital" className={classes.navButton}>
-                      Hospital
+                    <Link to="/about" className={classes.navButton}>
+                      About Us
                     </Link>
                   </Typography>
                   <Typography className={classes.navButtonContainer}>
-                    <Link to="/health" className={classes.navButton}>
-                      Health Profesional
+                    <Link to="/contact" className={classes.navButton}>
+                      Contact Us
                     </Link>
                   </Typography>
 
@@ -320,7 +318,5 @@ function SignedoutNavBar() {
 SignedoutNavBar.propTypes = {
   width: PropTypes.oneOf(["lg", "md", "sm", "xl", "xs"]).isRequired,
 };
-// const mapStateToProps = ({currentUser}) => {
-//   return { currentUser }
-// }
-export default connect(null, { logout })(SignedoutNavBar);
+
+export default SignedoutNavBar
