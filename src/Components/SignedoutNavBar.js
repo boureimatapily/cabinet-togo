@@ -10,7 +10,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MoreIcon from "@material-ui/icons/MoreVert";
+// import MoreIcon from "@material-ui/icons/MoreVert";
 import PropTypes from "prop-types";
 
 //import { Link } from '@material-ui/core';
@@ -175,9 +175,9 @@ function SignedoutNavBar() {
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
+  // const handleMobileMenuOpen = (event) => {
+  //   setMobileMoreAnchorEl(event.currentTarget);
+  // };
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -284,7 +284,7 @@ function SignedoutNavBar() {
                     </Link>
                   </Typography>
 
-                  <IconButton
+                  {/* <IconButton
                     edge="end"
                     aria-label="account of current user"
                     aria-controls={menuId}
@@ -293,9 +293,9 @@ function SignedoutNavBar() {
                     color="inherit"
                   >
                     <AccountCircle />
-                  </IconButton>
+                  </IconButton> */}
                 </div>
-                <div className={classes.sectionMobile}>
+                {/* <div className={classes.sectionMobile}>
                   <IconButton
                     aria-label="show more"
                     aria-controls={mobileMenuId}
@@ -305,7 +305,7 @@ function SignedoutNavBar() {
                   >
                     <MoreIcon />
                   </IconButton>
-                </div>
+                </div> */}
               </Toolbar>
             </AppBar>
             {renderMobileMenu}
