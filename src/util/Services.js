@@ -54,18 +54,20 @@ export default function Services({ image, description, buttonText, link }) {
                           variant="body2"
                           color="textSecondary"
                           component="p"
-                          style={{ color: "black", fontWeight: "bold" }}
+                          style={{ color: "black", fontWeight: "bold", fontSize:16 }}
                         >
                           {description}
                         </Typography>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions style={{ marginLeft: "30%" }}>
+                    <CardActions style={{ marginLeft: "30%", }}>
                       <Button
+                      variant="filled"
                         style={{
                           backgroundColor: "blue",
                           color: "white",
                           fontWeight: "bold",
+                          
                         }}
                       >
                         {buttonText}

@@ -58,7 +58,7 @@ export default function ServicesSection() {
     {
       id: 6,
       iconImage: require("../../Images/finance.png"),
-      description: "Preparation of financial statements",
+      description: "financial statements",
       buttonText: "more...",
       link:"/finance"
     },
@@ -67,7 +67,7 @@ export default function ServicesSection() {
       iconImage: require("../../Images/judgeI.png"),
       description: "Training",
       buttonText: "more...",
-      link:"/training"
+      link:"/contact"
     },
     {
       id: 8,
