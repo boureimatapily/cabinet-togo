@@ -5,7 +5,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { Container, Grid, Paper } from "@material-ui/core";
+import { Container, Grid, Paper, Hidden } from "@material-ui/core";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -66,7 +66,7 @@ export default function Account() {
     <Container fixed>
       <Grid container>
         <Grid xs={12} sm={12} md={8} lg={8} className={classes.rootContainer}>
-          <h1>Purpose of bookkeeping</h1>
+          <h1>Accounting and tax assistance</h1>
           <div className={classes.root}>
             <Tabs
               orientation="vertical"
@@ -77,27 +77,32 @@ export default function Account() {
               className={classes.tabs}
             >
               <Tab
-                label="CONSISTANCE"
+                label="ASSISTANCE"
                 {...a11yProps(0)}
                 style={{ fontWeight: "bolder" }}
               />
             </Tabs>
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                Bookkeeping consists of recording all the accounting documents
-                (purchase or sale invoices, receipts, receipts, expense reports,
-                etc.), according to the standard of the chart of accounts.
+                Monthly, quarterly or year-end assistance. Bookkeeping and
+                current tax assistance For small and medium-sized businesses
+                Monthly entry of accounts, Establishment of current tax
+                declarations (VAT, corporate taxes, etc.), Preparation of the
+                balance sheet (annual accounts) and the tax return at the end of
+                the year.
               </Paper>
             </TabPanel>
           </div>
         </Grid>
-        <Grid xs={0} sm={0} md={4} lg={4}>
-          <img
-            src={require("../../Images/account.png")}
-            alt="accountimg"
-            style={{ width: 200, height: 200 }}
-          />
-        </Grid>
+        <Hidden smDown>
+          <Grid xs={0} sm={0} md={4} lg={4}>
+            <img
+              src={require("../../Images/account.png")}
+              alt="accountimg"
+              style={{ width: 300, height: 200 }}
+            />
+          </Grid>
+        </Hidden>
       </Grid>
 
       <Grid container>
@@ -120,22 +125,26 @@ export default function Account() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                Justify the use of company funds and certify accounting
-                operations (purchase, payment of salaries, sale of goods or
-                services, etc.) Meet the legal obligations of the tax
-                administration: VAT, declaration of profits, declaration on
-                income and certain social funds.
+                Revision of the accounts and closing of the annual accounts For
+                companies with an internal accounting department Revision of the
+                accounting kept internally by the company, Assistance on
+                specific accounting or tax points, Establishment of annual
+                accounts. The firm's assistance can be extremely useful in
+                obtaining advice on organizing and presenting the accounts, and
+                in managing the taxation of one's company.
               </Paper>
             </TabPanel>
           </div>
         </Grid>
-        <Grid xs={0} sm={0} md={4} lg={4}>
-          <img
-            src={require("../../Images/account.png")}
-            alt="accountimg"
-            style={{ width: 200, height: 200 }}
-          />
-        </Grid>
+        <Hidden smDown>
+          <Grid xs={0} sm={0} md={4} lg={4}>
+            <img
+              src={require("../../Images/account.png")}
+              alt="accountimg"
+              style={{ width: 300, height: 200 }}
+            />
+          </Grid>
+        </Hidden>
       </Grid>
 
       <Grid container>
@@ -150,7 +159,7 @@ export default function Account() {
               className={classes.tabs}
             >
               <Tab
-                label="PERSON"
+                label="MISSION"
                 {...a11yProps(0)}
                 style={{ fontWeight: "bolder" }}
               />
@@ -158,24 +167,26 @@ export default function Account() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                The bookkeeping can be done within the company itself (by an
-                accountant, a secretary, the manager ...) or entrusted to an
-                accounting firm. Bookkeeping is not difficult but it requires a
-                certain rigor and requires the systematic collection and
-                issuance of supporting documents. Indeed, the accounting
-                documents are the first elements examined during a financial
-                control (internal or external).
+                Our missions in this area therefore focus on the management of
+                accounting and corporate taxation to help them produce reliable
+                accounting and financial information and fulfill their tax
+                obligations in compliance with the rules in force. We are also
+                involved in the performance of certain accounting missions such
+                as the inventory of fixed assets and the implementation of cost
+                accounting.
               </Paper>
             </TabPanel>
           </div>
         </Grid>
-        <Grid xs={0} sm={0} md={4} lg={4}>
-          <img
-            src={require("../../Images/account.png")}
-            alt="accountimg"
-            style={{ width: 200, height: 200 }}
-          />
-        </Grid>
+        <Hidden smDown>
+          <Grid xs={0} sm={0} md={4} lg={4}>
+            <img
+              src={require("../../Images/account.png")}
+              alt="accountimg"
+              style={{ width: 300, height: 200 }}
+            />
+          </Grid>
+        </Hidden>
       </Grid>
     </Container>
   );
