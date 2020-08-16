@@ -86,7 +86,7 @@ class Home extends React.Component {
                     <ContactPhoneIcon
                       style={{ color: "black", width: 50, height: 50 }}
                     />
-                    <h2>Contactez Nous </h2>
+                    <h2>Contact </h2>
 
                     <Link to="/contact">
                       <Button
