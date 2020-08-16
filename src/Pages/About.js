@@ -43,26 +43,26 @@ export default function About() {
   const staffList = [
     {
       id: "1",
-      image: require("../Images/pierre.png"),
-      name: "Pierre Togo",
-      job: "Accounting",
+      image: require("../Images/samuel.jpg"),
+      name: "Samuel Togo",
+      job: "Comptable",
     },
     {
       id: "2",
       image: require("../Images/pierreA.png"),
       name: "Pierre Togo",
-      job: "Accounting",
+      job: "Auditeur Financier",
     },
     {
       id: "3",
       image: require("../Images/pierreT.png"),
-      name: "Pierre Togo",
+      name: "Cabinet",
       job: "Accounting",
     },
     {
       id: "4",
       image: require("../Images/pierre.png"),
-      name: "Pierre Togo",
+      name: "Cabinet",
       job: "Accounting",
     },
   ];
