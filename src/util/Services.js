@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   cardroot:{
-    height: 220,
+    height: 250,
   },
   cardPaper: {
     margin: 2,
@@ -63,7 +63,7 @@ export default function Services({ image, description, buttonText, link }) {
                         </Typography>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions style={{ marginLeft: "30%" }}>
+                    <CardActions style={{ marginLeft: "20%" }}>
                       <Button
                       variant="filled"
                         style={{
