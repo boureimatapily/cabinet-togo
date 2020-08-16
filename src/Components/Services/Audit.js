@@ -66,7 +66,7 @@ export default function Audit() {
     <Container fixed>
       <Grid container>
         <Grid xs={12} sm={12} md={8} lg={8} className={classes.rootContainer}>
-          <h1>Accounting audits</h1>
+          <h1>Audit comptable</h1>
           <div className={classes.root}>
             <Tabs
               orientation="vertical"
@@ -84,11 +84,11 @@ export default function Audit() {
             </Tabs>
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                An accounting and financial audit is an examination the outcome
-                of which makes it possible to express a reasoned opinion on the
-                regularity and sincerity of a company's accounts. It helps to
-                assess the control of a company's financial risks and to look
-                for possible irregularities.
+                Un audit comptable et financier est un examen dont l’issue
+                permet d'exprimer une opinion motivée sur la régularité et la
+                sincérité des comptes d’une entreprise. Il contribue à évaluer
+                la maîtrise des risques financiers d’une société et à rechercher
+                d’éventuelles irrégularités.
               </Paper>
             </TabPanel>
           </div>
@@ -124,8 +124,8 @@ export default function Audit() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                Accounting and financial audits can also provide technical
-                support to companies in difficulty.
+                L’audit comptable et financier peut également apporter un appui
+                technique à des entreprises en difficulté.
               </Paper>
             </TabPanel>
           </div>

@@ -20,7 +20,7 @@ export default function Contact() {
   return (
     <Container fixed className={classes.root}>
       <Grid container>
-        '<h1> Contact us</h1>
+        '<h1> Contactez Nous</h1>
         <Grid item xs={12} sm={12} md={12} lg={12}>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.193406982219!2d-7.990856685699129!3d12.56949522697584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDM0JzEwLjIiTiA3wrA1OScxOS4yIlc!5e0!3m2!1sen!2sgh!4v1595693583310!5m2!1sen!2sgh"

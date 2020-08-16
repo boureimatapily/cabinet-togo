@@ -66,7 +66,7 @@ export default function Bookkeeping() {
     <Container fixed>
       <Grid container>
         <Grid xs={12} sm={12} md={8} lg={8} className={classes.rootContainer}>
-          <h1>Purpose of bookkeeping</h1>
+          <h1>L'objectif de la tenue de comptabilité</h1>
           <div className={classes.root}>
             <Tabs
               orientation="vertical"
@@ -77,16 +77,17 @@ export default function Bookkeeping() {
               className={classes.tabs}
             >
               <Tab
-                label="CONSISTANCE"
+                label="Objectif"
                 {...a11yProps(0)}
                 style={{ fontWeight: "bolder" }}
               />
             </Tabs>
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                Bookkeeping consists of recording all the accounting documents
-                (purchase or sale invoices, receipts, receipts, expense reports,
-                etc.), according to the standard of the chart of accounts.
+                La tenue comptable ou tenue de la comptabilité consiste à
+                enregistrer toutes les pièces comptables (factures d'achat ou de
+                vente, reçus, quittances, notes de frais...) de l'entreprise,
+                suivant la norme du plan comptable.
               </Paper>
             </TabPanel>
           </div>
@@ -122,23 +123,23 @@ export default function Bookkeeping() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                Justify the use of company funds and certify accounting
-                operations (purchase, payment of salaries, sale of goods or
-                services, etc.) Meet the legal obligations of the tax
-                administration: VAT, declaration of profits, declaration on
-                income and certain social funds.
+                Justifier de l'utilisation des fonds de l'entreprise et attester
+                des opérations comptables (achat, paiement des salaires, vente
+                de biens ou services...). Répondre aux obligations légales de
+                l'administration fiscale : TVA, déclaration des bénéfices,
+                déclaration sur le revenu et de certaines caisses sociales.
               </Paper>
             </TabPanel>
           </div>
         </Grid>
         <Hidden smDown>
-        <Grid xs={0} sm={0} md={4} lg={4}>
-          <img
-            src={require("../../Images/chart.png")}
-            alt="accountimg"
-            style={{ width: 300, height: 200 }}
-          />
-        </Grid>
+          <Grid xs={0} sm={0} md={4} lg={4}>
+            <img
+              src={require("../../Images/chart.png")}
+              alt="accountimg"
+              style={{ width: 300, height: 200 }}
+            />
+          </Grid>
         </Hidden>
       </Grid>
 
@@ -154,7 +155,7 @@ export default function Bookkeeping() {
               className={classes.tabs}
             >
               <Tab
-                label="PERSON"
+                label="PERSONNE"
                 {...a11yProps(0)}
                 style={{ fontWeight: "bolder" }}
               />
@@ -162,25 +163,26 @@ export default function Bookkeeping() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                The bookkeeping can be done within the company itself (by an
-                accountant, a secretary, the manager ...) or entrusted to an
-                accounting firm. Bookkeeping is not difficult but it requires a
-                certain rigor and requires the systematic collection and
-                issuance of supporting documents. Indeed, the accounting
-                documents are the first elements examined during a financial
-                control (internal or external).
+                La tenue comptable peut être faite au sein de l'entreprise
+                elle-même (par un comptable, une secrétaire, le dirigeant...) ou
+                confiée à un cabinet d'expertise-comptable. La tenue comptable
+                n'est pas difficile mais elle exige une certaine rigueur et
+                nécessite la collecte et l’émission systématique des pièces
+                justificatives. En effet, les pièces comptables sont les
+                premiers éléments examinés lors d’un contrôle financier (interne
+                ou externe).
               </Paper>
             </TabPanel>
           </div>
         </Grid>
-        <Hidden smDown> 
-        <Grid xs={0} sm={0} md={4} lg={4}>
-          <img
-            src={require("../../Images/chart.png")}
-            alt="accountimg"
-            style={{ width: 300, height: 200 }}
-          />
-        </Grid>
+        <Hidden smDown>
+          <Grid xs={0} sm={0} md={4} lg={4}>
+            <img
+              src={require("../../Images/chart.png")}
+              alt="accountimg"
+              style={{ width: 300, height: 200 }}
+            />
+          </Grid>
         </Hidden>
       </Grid>
     </Container>

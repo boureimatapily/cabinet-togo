@@ -78,16 +78,15 @@ class Home extends React.Component {
               <div className={classes.firstContainerFirstDiv}>
                 <h2> Cabinet Comptable Antime Togo </h2>
                 <h4>
-                  {" "}
-                  The accounting firm Antimé TOGO is registered with the National Order 
-                  of Chartered Accountants and Chartered Accountants of Mali (ONECCA-MALI).
-                  </h4>
+                Le cabinet comptable Antimé TOGO est inscrit au tableau de l’Ordre National
+                 des Experts Comptable et Comptable Agrées du Mali (ONECCA-MALI).
+                   </h4>
                 <div className={classes.contact}>
                   <Paper className={classes.contactPaper}>
                     <ContactPhoneIcon
                       style={{ color: "black", width: 50, height: 50 }}
                     />
-                    <h2>Contact us </h2>
+                    <h2>Contactez Nous </h2>
 
                     <Link to="/contact">
                       <Button
@@ -96,7 +95,7 @@ class Home extends React.Component {
                         color="primary"
                       >
                         {" "}
-                        Get Start
+                        Par ici ...
                       </Button>
                     </Link>
                   </Paper>
@@ -104,14 +103,14 @@ class Home extends React.Component {
                     <InfoIcon
                       style={{ color: "blue", width: 50, height: 50 }}
                     />
-                    <h2>About us</h2>
+                    <h2>A Propos</h2>
                     <Link to="/about">
                       <Button
                         className={classes.getStartButton}
                         variant="contained"
                         color="primary"
                       >
-                        Get Start
+                         Par ici ...
                       </Button>
                     </Link>
                   </Paper>
@@ -135,7 +134,7 @@ class Home extends React.Component {
           </Grid>
           <Grid container>
             <Grid item sm={12} xs={12} md={12} lg={12} className={classes.secondContainer}>
-                <h1>OUR SERVICES</h1>
+                <h1>NOS SERVICES</h1>
             </Grid>
           </Grid>
           <Grid container>

@@ -1,6 +1,6 @@
-import React,  {  useState } from 'react';
-import   firebase  from '../Config/fbconfig';
-import SignedinNavBar from './SignedinNavBar';
+import React from 'react';
+// import   firebase  from '../Config/fbconfig';
+// import SignedinNavBar from './SignedinNavBar';
 import SignedoutNavBar from './SignedoutNavBar';
 
 
@@ -8,25 +8,26 @@ import SignedoutNavBar from './SignedoutNavBar';
 
  function NavBar() {
  
-    const [isAuthenticated, setIsAuthenticated] = useState("")
+    // const [isAuthenticated, setIsAuthenticated] = useState("")
 
-  firebase.auth().onAuthStateChanged(
-        (user)=>{
-          if(user){
-            setIsAuthenticated("loggedin")
+  // firebase.auth().onAuthStateChanged(
+  //       (user)=>{
+  //         if(user){
+  //           setIsAuthenticated("loggedin")
            
-          }else{
-            setIsAuthenticated("loggedout")
+  //         }else{
+  //           setIsAuthenticated("loggedout")
            
-          }
-        }
-  )
+  //         }
+  //       }
+  // )
 
    return(
-     <div>
-            { isAuthenticated === "loggedin" &&   <SignedinNavBar /> }
-            { isAuthenticated === "loggedout" &&   <SignedoutNavBar /> }
-     </div>
+     <>
+            {/* { isAuthenticated === "loggedin" &&   <SignedinNavBar /> }
+            { isAuthenticated === "loggedout" &&   <SignedoutNavBar /> } */}
+            <SignedoutNavBar />
+     </>
    )
 }
 

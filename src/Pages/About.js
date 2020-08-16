@@ -84,11 +84,10 @@ export default function About() {
               Cabinet Comptable Antime Togo{" "}
             </span>
             <span style={{ fontWeight: "bolder" }}>
-              The accounting firm Antimé TOGO is registered with the National
+            Le cabinet comptable Antimé TOGO est inscrit au tableau de l’Ordre National
             </span>
             <span style={{ fontWeight: "bolder" }}>
-              Order of Chartered Accountants and Chartered Accountants of Mali
-              (ONECCA-MALI).
+            des Experts Comptable et Comptable Agrées du Mali (ONECCA-MALI).
             </span>
           </Paper>
         </Grid>
@@ -104,33 +103,28 @@ export default function About() {
         >
           <Paper elevation={0} className={classes.title}>
             <span style={{ fontWeight: "bolder" }}>
-              It is managed by Mr. TOGO Antimé, surrounded by a team of
-              collaborators, lawyers and accountants at your disposal to advise
-              and guide you.
+            Il est dirigé par Monsieur TOGO Antimé, entouré d'une équipe de collaborateurs,
+             juristes et comptables  à votre écoute pour vous conseiller et orienter.
             </span>
             <span style={{ fontWeight: "bolder" }}>
-              With a large local clientele and his years of experience, he
-              intervenes and masters various environments, whether in terms of
-              staff or business sector. The Firm has a daily updated website,
-              and sends you by e-mail a summary of the main points of legal and
-              regulatory news.
+            Fort d'une importante clientèle locale et de ses années d'expérience,
+             il intervient et maîtrise des environnements variés que ce soit en termes 
+             d'effectifs ou de secteur d’activités. Le Cabinet est doté d'un site internet mis à jour quotidiennement, 
+             et vous adresse par e-mail une synthèse des principaux points de l'actualité légale et réglementaire.
+
             </span>
             <span style={{ fontWeight: "bolder" }}>
-              It is located in Kalaban coura ACI street 288 gate 575 not far
-              from the airport road around 30 meters.
+            Il est situé à Kalaban coura ACI rue 288 porte 575 non loin de la route de l’aoeport vers 30 mètres.
             </span>
             <span style={{ fontWeight: "bolder" }}>
-              The organization of work is established according to the needs of
-              the client, from the smallest to the largest, the Firm knows how
-              to adapt to each. A very special place is reserved for customer
-              reminders during the day and for reactivity to give a quick answer
-              to any question.
+            L'organisation du travail est établie en fonction des besoins du client, du plus petit au plus grand,
+             le Cabinet sait s'adapter à chacun. Une place toute particulière est réservée au rappel des clients 
+             dans la journée et à la réactivité pour donner une réponse rapide à toute question.
             </span>
-            <h5>
-              Contact us to find out more about our support and our services on
-              the site, email from the firm : antimetogo@cabinetcomptabletogo.ml
-              or by email antimetogo@yahoo.com
-            </h5>
+            <h3 style={{ fontWeight: "bolder" }}>
+            Contactez-nous pour en savoir plus sur notre accompagnement et nos services sur le site mail du
+             cabinet antimetogo@cabinetcomptabletogo.ml ou  antimetogo@yahoo.com
+            </h3>
           </Paper>
         </Grid>
       </Grid>

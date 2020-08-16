@@ -66,7 +66,7 @@ export default function Account() {
     <Container fixed>
       <Grid container>
         <Grid xs={12} sm={12} md={8} lg={8} className={classes.rootContainer}>
-          <h1>Accounting and tax assistance</h1>
+          <h1>Assistances comptables et fiscale </h1>
           <div className={classes.root}>
             <Tabs
               orientation="vertical"
@@ -84,12 +84,12 @@ export default function Account() {
             </Tabs>
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                Monthly, quarterly or year-end assistance. Bookkeeping and
-                current tax assistance For small and medium-sized businesses
-                Monthly entry of accounts, Establishment of current tax
-                declarations (VAT, corporate taxes, etc.), Preparation of the
-                balance sheet (annual accounts) and the tax return at the end of
-                the year.
+                Une assistance mensuelle, trimestrielle ou en fin d'année. Tenue
+                comptable et assistance fiscale courante Pour les petites et
+                moyennes entreprises Saisie mensuelle de la comptabilité,
+                Etablissement des déclarations fiscales courantes (TVA, impôts
+                sur les sociétés, ....), Etablissement du bilan (comptes
+                annuels) et de la liasse fiscale en fin d'exercice.
               </Paper>
             </TabPanel>
           </div>
@@ -125,13 +125,14 @@ export default function Account() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                Revision of the accounts and closing of the annual accounts For
-                companies with an internal accounting department Revision of the
-                accounting kept internally by the company, Assistance on
-                specific accounting or tax points, Establishment of annual
-                accounts. The firm's assistance can be extremely useful in
-                obtaining advice on organizing and presenting the accounts, and
-                in managing the taxation of one's company.
+                Révision de la comptabilité et arrêté des comptes annuels Pour
+                les sociétés possédant un service comptable en interne Révision
+                de la comptabilité tenue en interne par la société, Assistance
+                sur des points comptables ou fiscaux spécifiques, Etablissement
+                des comptes annuels. L’assistance du cabinet peut se révéler
+                extrêmement utile pour obtenir des conseils pour organiser et
+                présenter la comptabilité, et pour gérer la fiscalité de sa
+                société.
               </Paper>
             </TabPanel>
           </div>
@@ -167,13 +168,13 @@ export default function Account() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                Our missions in this area therefore focus on the management of
-                accounting and corporate taxation to help them produce reliable
-                accounting and financial information and fulfill their tax
-                obligations in compliance with the rules in force. We are also
-                involved in the performance of certain accounting missions such
-                as the inventory of fixed assets and the implementation of cost
-                accounting.
+                Nos missions dans ce domaine portent donc sur la gestion de la
+                comptabilité et la fiscalité des entreprises pour les aider à
+                produire des informations comptables et financières fiables et
+                remplir leurs obligations fiscales dans le respect des règles en
+                vigueur. Nous intervenons également dans la réalisation de
+                certaines missions comptables telles que l’inventaire des
+                immobilisations et la mise en place de comptabilité analytique.
               </Paper>
             </TabPanel>
           </div>

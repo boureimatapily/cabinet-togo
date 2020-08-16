@@ -66,12 +66,12 @@ export default function Finance() {
     <Container fixed>
       <Grid container>
         <Grid xs={12} sm={12} md={8} lg={8} className={classes.rootContainer}>
-          <h1>Preparation of financial statements</h1>
+          <h1>Elaboration des états financiers </h1>
           <h4>
-            In SYSCOAHADA, the financial statements are modulated according,
-            essentially, to the size, financial and human resources of
-            companies. There are three (3) systems for presenting financial
-            statements
+            Dans le SYSCOAHADA, les états financiers sont modulés en fonction,
+            essentiellement, de la taille, des ressources financières et
+            humaines des entreprises. Il existe trois (3) systèmes de
+            présentation des états financiers :
           </h4>
           <div className={classes.root}>
             <Tabs
@@ -90,15 +90,19 @@ export default function Finance() {
             </Tabs>
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                <h4> The normal system </h4>
-                It is mainly intended for medium and large enterprises whose
-                annual turnover exceeds 100,000,000 FCFA but can be used by
-                small enterprises wishing to better analyze their situation and
-                their operations. It constitutes the frame of reference for
-                common law and includes the obligation to draw up 4 summary
-                documents: the income statement, the balance sheet, the TAFIRE,
-                the annexed statement and the statistical supplementary
-                statement.
+                <h4> Le système normal </h4>
+                Il est prévu principalement pour les moyennes et grandes
+                entreprises dont le chiffre d'affaires annuel est supérieur à
+                100 000 000 FCFA mais peut être utilisée par de petites
+                entreprises désireuses de mieux analyser leur situation et leurs
+                opérations. Il constitue le référentiel du droit commun et
+                comporte l'obligation d'établir 4 documents de synthèse :
+                <ul>
+                  <li>le compte de résultat </li>
+                  <li>le bilan </li>
+                  <li>le TAFIRE </li>
+                  <li> l'état annexé et l'état supplémentaire statistique. </li>
+                </ul>
               </Paper>
             </TabPanel>
           </div>
@@ -126,7 +130,7 @@ export default function Finance() {
               className={classes.tabs}
             >
               <Tab
-                label="USAGE"
+                label="CONSISTANCE"
                 {...a11yProps(0)}
                 style={{ fontWeight: "bolder" }}
               />
@@ -134,12 +138,17 @@ export default function Finance() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                <h4> The lean system </h4>
-                Reserved for small businesses (SMEs, SMIs) not exceeding a
-                certain turnover threshold (turnover below 100,000,000 FCFA) and
-                relatively small number of employees. Less developed than the
-                normal system, it has 3 parts: the income statement, the balance
-                sheet, the very simplified annexed state.
+                <h4> Le système allégé </h4>
+                Réservé aux petites entreprises (PME, PMI) ne dépassant pas un
+                certain seuil de chiffre d'Affaire (chiffre d'affaires inférieur
+                à 100 000 000FCFA) et d'effectifs de salariés relativement
+                réduit. Moins développé que le système normal, il comporte 3
+                parties :
+                <ul>
+                  <li>le compte de résultat, </li>
+                  <li>le bilan </li>
+                  <li> l'état annexé très simplifié.</li>
+                </ul>
               </Paper>
             </TabPanel>
           </div>
@@ -167,7 +176,7 @@ export default function Finance() {
               className={classes.tabs}
             >
               <Tab
-                label="VERY SMALL"
+                label="CONSISTANCE"
                 {...a11yProps(0)}
                 style={{ fontWeight: "bolder" }}
               />
@@ -175,12 +184,12 @@ export default function Finance() {
 
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                <h4> The minimum cash system  </h4>
-                It is aimed at very small businesses and
-                informal sector units whose annual revenues are below the
-                threshold set in Article 13 of common law. This accounting
-                system is based on cash accounting (revenue expenditure)
-                respecting the rules of double entry.
+                <h4> Le système minimal de trésorerie </h4>
+                Il s'adresse aux très petites entreprises et aux unités du
+                secteur informel dont les recettes annuelles sont inférieures au
+                seuil fixé dans l'article 13 du droit commun. Ce système de
+                comptabilité repose sur une comptabilité de trésorerie (recette
+                dépenses) en respectant les règles de la partie double.
               </Paper>
             </TabPanel>
           </div>

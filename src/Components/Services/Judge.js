@@ -66,7 +66,7 @@ export default function Judge() {
     <Container fixed>
       <Grid container>
         <Grid xs={12} sm={12} md={8} lg={8} className={classes.rootContainer}>
-          <h1>Judicial expertise</h1>
+          <h1>Expertise judiciaire </h1>
           <div className={classes.root}>
             <Tabs
               orientation="vertical"
@@ -84,11 +84,11 @@ export default function Judge() {
             </Tabs>
             <TabPanel value={value} index={0}>
               <Paper style={{ fontWeight: "bolder" }}>
-                When the solution of the dispute depends on a technical
-                analysis, it is possible to call in a legal expert. The
-                expertise can be requested by the parties or by the judge. It
-                can be requested before the trial or during the trial itself.
-                The expert draws up a report submitted to the judge.
+                Lorsque la solution du litige dépend d'une analyse technique il
+                est possible de faire appel à un expert judiciaire. L'expertise
+                peut être demandée par les parties ou par le juge. Elle peut
+                être demandée avant le procès ou au cours du procès lui-même.
+                L'expert établit un rapport remis au juge.
               </Paper>
             </TabPanel>
           </div>

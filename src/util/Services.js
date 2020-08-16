@@ -15,8 +15,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  cardroot:{
+    height: 220,
+  },
   cardPaper: {
-    margin: 5,
+    margin: 2,
   },
   content: {
     textAlign: "center",
@@ -39,8 +42,8 @@ export default function Services({ image, description, buttonText, link }) {
           <Grid container>
             <Grid item sm={12} xs={12} md={12} lg={12}>
               <div className={classes.root}>
-                <Paper className={classes.cardPaper}>
-                  <Card className={classes.root}>
+                <Paper className={classes.cardPaper} elevation={3}>
+                  <Card className={classes.cardroot}>
                     <CardActionArea>
                       <CardMedia
                         component="img"
@@ -54,13 +57,13 @@ export default function Services({ image, description, buttonText, link }) {
                           variant="body2"
                           color="textSecondary"
                           component="p"
-                          style={{ color: "black", fontWeight: "bold", fontSize:16 }}
+                          style={{ color: "black", fontWeight: "bold", fontSize:15 }}
                         >
                           {description}
                         </Typography>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions style={{ marginLeft: "30%", }}>
+                    <CardActions style={{ marginLeft: "30%" }}>
                       <Button
                       variant="filled"
                         style={{

@@ -23,57 +23,57 @@ export default function ServicesSection() {
     {
       id: 1,
       iconImage: require("../../Images/chart.png"),
-      description: "Bookkeeping",
-      buttonText: "more...",
+      description: "Ténue de la comptabilité",
+      buttonText: "Plus d'Infos...",
       link:"/bookkeeping"
     },
     {
       id: 2,
       iconImage: require("../../Images/account.png"),
-      description: "Accounting and tax assistance",
-      buttonText: "more...",
+      description: "Assistances comptables et fiscale",
+      buttonText: "Plus d'Infos...",
       link:"/account"
     },
     {
       id: 3,
       iconImage: require("../../Images/audit.png"),
-      description: "Accounting audits",
-      buttonText: "more...",
+      description: "Audits comptable",
+      buttonText: "Plus d'Infos...",
       link:"/audit"
     },
     {
       id: 4,
       iconImage: require("../../Images/judge.png"),
-      description: "Judicial expertise",
-      buttonText: "more...",
+      description: "Expertise judiciaire",
+      buttonText: "Plus d'Infos...",
       link:"/judge"
     },
     {
       id: 5,
       iconImage: require("../../Images/pen.png"),
-      description: "Project studies",
-      buttonText: "more...",
+      description: "Etudes des projets ",
+      buttonText: "Plus d'Infos...",
       link:"/project"
     },
     {
       id: 6,
       iconImage: require("../../Images/finance.png"),
-      description: "financial statements",
-      buttonText: "more...",
+      description: "Elaboration des états financiers",
+      buttonText: "Plus d'Infos...",
       link:"/finance"
     },
     {
       id: 7,
       iconImage: require("../../Images/judgeI.png"),
-      description: "Training",
-      buttonText: "more...",
+      description: "Formation",
+      buttonText: "Contactez Nous...",
       link:"/contact"
     },
     {
       id: 8,
       iconImage: require("../../Images/contact.png"),
-      description: "All Others infos",
-      buttonText: "more...",
+      description: "Pour tous autres  infos",
+      buttonText: "Contactez Nous...",
       link:"/contact"
     },
     

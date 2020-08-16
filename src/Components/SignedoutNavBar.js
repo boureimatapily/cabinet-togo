@@ -4,11 +4,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
+// import InputBase from "@material-ui/core/InputBase";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
+// import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 // import MoreIcon from "@material-ui/icons/MoreVert";
 import PropTypes from "prop-types";
@@ -135,19 +135,19 @@ function SignedoutNavBar() {
       <List>
         <ListItem button>
           <Link to="/">
-            <ListItemText primary="Home" />
+            <ListItemText primary="Accueil" />
           </Link>
         </ListItem>
 
         <ListItem button>
           <Link to="/about">
-            <ListItemText primary="About Us" />
+            <ListItemText primary="A Propos" />
           </Link>
         </ListItem>
 
         <ListItem button>
           <Link to="/contact">
-            <ListItemText primary="Contact Us" />
+            <ListItemText primary="Contactez Nous" />
           </Link>
         </ListItem>
       </List>
@@ -253,7 +253,7 @@ function SignedoutNavBar() {
                 <Typography className={classes.title} variant="h6" noWrap>
                   Cabinet Comptable Togo
                 </Typography>
-                <div className={classes.search} style={{backgroundColor:"#e3e3e3", color:"black"}}>
+                {/* <div className={classes.search} style={{backgroundColor:"#e3e3e3", color:"black"}}>
                   <div className={classes.searchIcon}>
                     <SearchIcon />
                   </div>
@@ -265,22 +265,22 @@ function SignedoutNavBar() {
                     }}
                     inputProps={{ "aria-label": "search" }}
                   />
-                </div>
+                </div> */}
                 <div className={classes.grow} />
                 <div className={classes.sectionDesktop}>
                   <Typography className={classes.navButtonContainer}>
                     <Link to="/" className={classes.navButton}>
-                      Home
+                    Accueil
                     </Link>
                   </Typography>
                   <Typography className={classes.navButtonContainer}>
                     <Link to="/about" className={classes.navButton}>
-                      About Us
+                      A Propos
                     </Link>
                   </Typography>
                   <Typography className={classes.navButtonContainer}>
                     <Link to="/contact" className={classes.navButton}>
-                      Contact Us
+                      Contactez Nous
                     </Link>
                   </Typography>
 
